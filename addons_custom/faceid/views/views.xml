@@ -1,0 +1,47 @@
+<odoo>
+  <data>
+    <record id="face_id_view_form" model="ir.ui.view">
+      <field name="name">face_id.view.form</field>
+      <field name="model">face</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group colspan="2">
+              <group>
+                <field name="img" widget="image" readonly="1" forge_save="1"/>
+              </group>
+              <group>
+                <field name="name" readonly="1" forge_save="1"/>
+                <field name="time" readonly="1" forge_save="1"/>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="face_id_view_tree" model="ir.ui.view">
+      <field name="name">face_id.view.tree</field>
+      <field name="model">face</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="time"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="face_id_action" model="ir.actions.act_window">
+      <field name="name">Action FaceId</field>
+      <field name="res_model">face</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+      id="face_manager_id"
+      name="Face ID manager"
+      action="face_id_action"
+      sequence="10"/>
+
+  </data>
+</odoo>
